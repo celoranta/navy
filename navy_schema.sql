@@ -23,14 +23,18 @@ CREATE TABLE ranks (rankID INTEGER PRIMARY KEY, rankName varchar(255), rankLevel
 INSERT INTO ranks (rankName, rankLevel)
 VALUES ('Mook',3),('Extraordinaire', 1),('RunOTheMill',2);
 
-
-CREATE TABLE sailors (sailorID INTEGER, sailorName varchar(255), sailorDOB varchar(25));
+CREATE TABLE sailors (sailorID INTEGER PRIMARY KEY, sailorName varchar(255), sailorDOB varchar(25));
 INSERT INTO sailors (sailorName, sailorDOB)
-VALUES ('Kai Kurosawa', '1978-08-13'),('Stephanie Delk', '1979-03-16'),('Marty Gasper', '1979-10-14'),('Chris Chatham', '1980-04-11'), ('Josh Hyde', '1797-10-23');
+VALUES ('Kai Kurosawa', '1978-08-13'),('Stephanie Delk', '1979-03-16'),('Marty Gasper', '1979-10-14'),
+('Chris Chatham', '1980-04-11'), ('Josh Hyde', '1797-10-23');
 
 CREATE TABLE toursOfDuty (tourID INTEGER PRIMARY KEY, sailorID INTEGER, sailorRank varchar(50),
 dutyID INTEGER, shipID INTEGER, activeTour BOOLEAN, tourStartDate varchar(25), tourEndDate varchar(25));
 INSERT INTO toursOfDuty (sailorID, sailorRank, dutyID, shipID, activeTour, tourStartDate, tourEndDate)
 VALUES (1, 1, 7, 1, 0, '1997-09-01','2001-04-21'),
        (2, 1, 4, 1, 0, '1997-09-01','2005-04-21'),
-       (3, 3, 3, 2, 1, '2001-09-01', '2018-03-21');
+       (3, 3, 3, 2, 1, '2001-09-01', '2018-03-21'),
+       (4, 2, 7, 1, 0, '1998-09-01','2001-04-21'),
+       (4, 3, 7, 2, 0, '1998-09-01','2001-04-21'),
+       (5, 1, 5, 3, 0, '2005-08-03', '2008-09-15'),
+       (5, 1, 5, 4, 0, '2005-08-03', '2008-09-15');
